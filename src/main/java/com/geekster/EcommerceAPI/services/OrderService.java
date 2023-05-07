@@ -35,7 +35,7 @@ public class OrderService {
         Product product = order.getProductId();
 
         Optional<Address> addressOptional =  addressRepo.findById(address.getAddressId());
-        Optional<Users> userOptional =  userRepo.findById(product.getProductId());
+        Optional<Users> userOptional =  userRepo.findById(user.getUserId());
         Optional<Product> productOptional =  productRepo.findById(product.getProductId());
 
         if(addressOptional.isEmpty()){
