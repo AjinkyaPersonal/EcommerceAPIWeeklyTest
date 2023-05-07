@@ -55,4 +55,26 @@ public class OrderService {
 
 
     }
+
+    public String deleteOrder(Integer id) {
+
+        Optional<Order> optionalOrder = orderRepo.findById(id);
+
+        if(optionalOrder.isEmpty()){
+            return "Id not found";
+        }
+        orderRepo.deleteById(id);
+        return "Order deleted sucessfully";
+    }
+
+
+    public Order getOrder(Integer orderId) {
+        Optional<Order> optionalOrder = orderRepo.findById(orderId);
+
+        if(optionalOrder.isEmpty()){
+            throw new IllegalStateException("OrderId not found");
+        }else{
+            return optionalOrder.get();
+        }
+    }
 }

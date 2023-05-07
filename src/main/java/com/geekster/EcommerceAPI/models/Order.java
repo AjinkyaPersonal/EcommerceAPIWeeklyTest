@@ -17,15 +17,15 @@ public class Order {
     private Integer orderId;
 
     @ManyToOne
-//    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "user_id")
     private Users userId;
 
     @ManyToOne
-//    @JoinColumn(name = "product_id")
+    @JoinColumn(name = "product_id")
     private Product productId;
 
     @ManyToOne
-//    @JoinColumn(name = "address_id")
+    @JoinColumn(name = "address_id")
     private Address addressId;
 
     private Integer productQuantity;
